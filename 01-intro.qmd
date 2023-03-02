@@ -1,0 +1,66 @@
+# Introduction
+
+::: {.callout-tip icon="false"}
+## 🤔 Questions
+
+-   How do you **access** the shell?
+-   How do you **use** the shell?
+:::
+
+## How to access the shell
+
+You access the shell using the "terminal". The terminal is a window into which we will type commands in. The terminal is already available on Mac and Linux. For windows you must download a separate program.
+
+## **Starting with the shell**
+
+We will spend most of our time learning about the basics of the shell by manipulating some experimental data from a hearing test.
+
+First, we're going to create a new **directory** to work in using the command `mkdir` which stands for "**m**a**k**e **dir**ectory".
+
+::: callout-note
+The word "directory" a location for storing files on a computer and it is synonym to "folder".
+:::
+
+To create the directory, we must type the following command in the terminal and hit return to execute the command.
+
+``` bash
+$ mkdir training
+```
+
+Now let's see if our new directory was created using the command `ls` that stands for "list" or "listing".
+
+``` bash
+$ ls
+```
+
+You should see your new directory called "training" in the list displayed in the terminal.
+
+Now we're going to go into that directory using the command `cd` which stands for "**c**hange **d**irectory".
+
+``` bash
+$ cd training
+```
+
+Now let's look at see what's in here. There should be nothing right now, because we just made it, but let's check using the command `ls` again.
+
+Now we are going to create a text file using the command `touch`
+
+``` bash
+$ touch file.txt
+```
+
+We can now check with if the file was created using the `ls` command again.
+
+Now we're going to download the data for this tutorial. For this you'll need internet access, because you're going to get it off the web. Enter the command:
+
+    git clone https://github.com/clarajegousse/training-data
+
+This command will grab all of the data needed for this workshop from the internet. (We're not going to talk about git right now, but it's a tool for doing version control.)
+
+Now let's check to see that we got the data. Again type: `ls` Now we should see a list of a lot of files, including something called data.
+
+In there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: `ls -F` Anything with a "/" after it is a directory. Things with a "\*" after them are programs. If there's after the name, then it's a file.
+
+You can also use the command `ls -l` to see whether items in a directory are files or directories. `ls -l` gives a lot more information too, such as the size of the file
+
+So, we can see that we have several files, directories and a program. Great!

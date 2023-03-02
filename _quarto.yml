@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "intro-shell-cmd-line"
+  author: "Clara Jégousse"
+  date: "3/1/2023"
+  chapters:
+    - index.qmd
+    - 01-intro.qmd
+    - 02-structure.qmd
+    - 03-tips-tricks.qmd
+    - 04-files.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
