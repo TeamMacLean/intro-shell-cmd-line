@@ -10,8 +10,7 @@ book:
     - 01-intro.qmd
     - 02-structure.qmd
     - 03-tips-tricks.qmd
-    - 04-files.qmd
-    - references.qmd
+    - conclusion.qmd
 
 bibliography: references.bib
 

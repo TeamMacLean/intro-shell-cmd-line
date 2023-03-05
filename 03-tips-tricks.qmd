@@ -1,4 +1,339 @@
 ---
-title: "03-tips-tricks.qmd"
+title: "Tips and tricks"
 author: "Clara Jégousse"
 ---
+
+We already know one shortcut to go quickly to the home directory:
+
+``` bash
+cd ~
+```
+
+## Wild cards
+
+Navigate to the `~/training/training-data/references` directory. This directory contains five references. If we type `ls`, we will see that there are a bunch of files. By default, `ls` lists all of the files in a given directory. The `*` character is a shortcut for "everything". Thus, if you enter `ls *`, you will see all of the contents of a given directory. Now try this command:
+
+``` bash
+ls *.bib
+```
+
+Now let's list all the files that start with 'cit'
+
+``` bash
+ls cit*
+```
+
+## Tab Completion
+
+Navigate to the `~/training/` directory.
+
+Typing out directory names can waste a lot of time. When you start typing out the name of a directory, then hit the tab key, the shell will try to fill in the rest of the directory name.
+
+For example, enter:
+
+``` bash
+cd t<tab>
+```
+
+The shell will fill in the rest of the directory name for `training`. Now go to `training/training-data`.
+
+``` bash
+ls r<tab><tab>
+```
+
+When you hit the first tab, nothing happens. The reason is that there are multiple directories in the home directory which start with `r`. Thus, the shell does not know which one to fill in. When you hit tab again, the shell will list the possible choices.
+
+Tab completion can also fill in the names of programs. For example, enter `e<tab><tab>`. You will see the name of every program that starts with an `e`. One of those is `echo`. If you enter `ec<tab>` you will see that tab completion works.
+
+## History
+
+You can easily access previous commands. Hit the up arrow. Hit it again. You can step backwards through your command history. The down arrow takes your forwards in the command history.
+
+`^-C` will cancel the command you are writing, and give you a fresh prompt.
+
+\^-R (arrow pointing up) will do a reverse-search through your command history. This is very useful.
+
+You can also review your recent commands with the `history` command. Just enter:
+
+``` bash
+history
+```
+
+to see a numbered list of recent commands, including this just issues `history` command. You can reuse one of these commands directly by referring to the number of that command.
+
+If your history looked like this:
+
+    258 cd ..
+    259 ls *
+    260 cd ~
+
+then you could repeat command #259 by simply entering:
+
+``` bash
+!259
+```
+
+(that's an exclamation mark).
+
+## Which program?
+
+Commands like `ls`, `rm`, `echo`, and `cd` are just ordinary programs on the computer. A program is just a file that you can *execute*. The program `which` tells you the location of a particular program. For example:
+
+``` bash
+which ls
+```
+
+Will return `/bin/ls`. Thus, we can see that `ls` is a program that sits inside of the `/bin` directory. Now enter:
+
+``` bash
+which find
+```
+
+You will see that `find` is a program that sits inside of the `/usr/bin` directory.
+
+So ... when we enter a program name, like `ls`, and hit enter, how does the shell know where to look for that program? How does it know to run `/bin/ls` when we enter `ls`. The answer is that when we enter a program name and hit enter, there are a few standard places that the shell automatically looks. If it can't find the program in any of those places, it will print an error saying "command not found". Enter the command:
+
+``` bash
+echo $PATH
+```
+
+This will print out the value of the `PATH` environment variable. More on environment variables later. Notice that a list of directories, separated by colon characters, is listed. These are the places the shell looks for programs to run. If your program is not in this list, then an error is printed. The shell ONLY checks in the places listed in the `PATH` environment variable.
+
+Navigate to the `shell` directory and list the contents. You will notice that there is a program (executable file) called `hello` in this directory. Now, try to run the program by entering:
+
+``` bash
+hello
+```
+
+You should get an error saying that hello cannot be found. That is because the directory `~/[username]/training` is not in the `PATH`. You can run the `hello` program by entering:
+
+``` bash
+./hello
+```
+
+Remember that `.` is a shortcut for the current working directory. This tells the shell to run the `hello` program which is located right here. So, you can run any program by entering the path to that program. You can run `hello` equally well by specifying:
+
+``` bash
+~/training/hello
+```
+
+When there are no `/` characters, the shell assumes you want to look in one of the default places for the program.
+
+## Inspecting files
+
+We now know how to switch directories, run programs, and look at the contents of directories, but how do we look at the contents of files?
+
+The easiest way to examine a file is to just print out all of the contents using the program `cat`. Enter the following command:
+
+``` bash
+cat file.txt
+```
+
+This file is empty because we created this file just earlier and we did not write anything in it. If we navigate to `~/training/training-data/`, we can check the file called `tsl.txt`"
+
+``` bash
+cat tsl.txt
+```
+
+Now let's do:
+
+``` bash
+cat tsl.txt tsl.txt
+```
+
+It will print out the contents of `tsl.txt` twice. `cat` actually stands for "con**cat**enate" and takes a list of file names and writes them out one after another. `cat` is a terrific program, but when the file is really big, it can be annoying to use. The program, `less`, is useful for this case. Enter the following command:
+
+``` bash
+less dict.txt
+```
+
+`less` opens the file, and lets you navigate through it. The commands are identical to the `man` program.
+
+**Some commands in `less`**
+
+| key     | action                 |
+|---------|------------------------|
+| "space" | to go forward          |
+| "b"     | to go backwarsd        |
+| "g"     | to go to the beginning |
+| "G"     | to go to the end       |
+| "q"     | to quit                |
+
+`less` also gives you a way of searching through files. Just hit the `/` key to begin a search. Enter the name of the word you would like to search for and hit enter. It will jump to the next location where that word is found. Try searching the `dict.txt` file for the word "cat". If you hit `/` then `enter`, `less` will just repeat the previous search. `less` searches from the current location and works its way forward. If you are at the end of the file and search for the word "cat", `less` will not find it. You need to go to the beginning of the file and search.
+
+Remember, the `man` program actually uses `less` internally and therefore uses the same commands, so you can search documentation using `/` as well!
+
+Another option for examining the content of a file is to look at the first/last few lines with the command `head` and `tail`.
+
+``` bash
+head dict.txt
+```
+
+``` bash
+tail dict.txt
+```
+
+## Catching patterns
+
+Now, we would like to see all the word containing the letter "e" in the dictionary. We can use the command `grep`:
+
+``` bash
+grep 'e' dict.txt
+```
+
+Now let's grab all the words in the dictionary that contain the pattern "cat"
+
+``` bash
+grep 'cat' dict.txt
+```
+
+Now we can use more complicated patterns called 'regular expressions' to catch the lines we are interested in. For example, all the words in the dictionary starting with 'e'.
+
+``` bash
+grep '^e' dict.txt
+```
+
+or all the words in the dictionary ending with 'e'.
+
+``` bash
+grep 'e$' dict.txt
+```
+
+## Redirection
+
+How about keeping a record of all the words we found ending with the letter 'e':
+
+``` bash
+grep 'e$' dict.txt > ending.txt
+```
+
+Let's check the content of this new file `ending.txt`.
+
+``` bash
+head ending.txt
+less ending.txt
+cat ending.txt
+```
+
+## Creating, moving, copying, and removing
+
+Now let's backup our work.
+
+``` bash
+mkdir backup
+```
+
+We will now move our newly created file to the `backup` directory:
+
+``` bash
+mv ending.txt backup/
+```
+
+We can also copy the entire dictionary `dict.txt` to the `backup` directory.
+
+``` bash
+cp dict.txt backup/
+```
+
+We insure that the files have been either moved or copied.
+
+``` bash
+ls backup/
+```
+
+To clarify within the `backup` directory that it contains a copy of the directory. There is no such command as `rename`, but we can use the `mv` command instead:
+
+``` bash
+mv backup/dict.txt backup/dict-copy.txt
+```
+
+We can now check if the change was made:
+
+``` bash
+ls backup/
+```
+
+For extra safety, we want to hide th backup directory In this case, we create a copy of our backup directory with the `cp` command. By default, `cp` works for files (not directory/folders), consequently we must use the argument `-r`, which stands for recursive, to copy the entire directory (and its content).
+
+``` bash
+cp -r backup/ .backup/
+```
+
+::: callout-note
+In Unix-like operating systems, **any file or folder that starts with a dot character** (for example, `/home/user/. config`), commonly called a dot file or dotfile, is to be treated as hidden -- that is, the ls command does not display them unless the `-a` or `-A` flags ( `ls -a` or `ls -A` ) are used.
+:::
+
+Now we can remove the regular `backup` directory:
+
+``` bash
+rm backup
+```
+
+## Count the words
+
+The `wc` program (word count) counts the number of lines, words, and characters in one or more files.
+
+Make sure you are in the `training-data` directory, then enter the following command:
+
+``` bash
+wc tsl.txt
+```
+
+For each of the files indicated, `wc` prints a line with three numbers. The first is the number of lines in that file. The second is the number of words. Finally, the total number of characters is indicated. The final line contains this information summed over all of the files.
+
+``` bash
+wc *.txt
+```
+
+## The awesome power of the Pipe
+
+Let's say we want to know the number of words containing the pattern 'ef' in the dictionary. We know both command `grep` and `wc`, and we execute them one after the other using the pipe `|`.
+
+``` bash
+grep 'ef' dict.txt | wc
+```
+
+Let's see if the word 'effector' is in the dictionary
+
+``` bash
+grep 'effector' dict.txt
+```
+
+We can open and edit the file within the Terminal, using a program called `nano`:
+
+``` bash
+nano dict.txt
+```
+
+Add the word 'effector' at the beginning of the file and use the `Ctrl-x` command to save and exit the text editor.
+
+We verify that the change was made:
+
+``` bash
+head dict.txt
+```
+
+Indeed, the word effector is now at the beginning of the dictionary. Great, but a dictionary should be sorted by alphabetical order. Let's reorder the words in the dictionary using the command `sort`
+
+``` bash 
+sort dict.txt > sorted-dict.txt
+```
+
+We verify that the change was made:
+
+``` bash 
+head sorted-dict.txt
+grep 'effector' sorted-dict.txt
+grep '^effect' sorted-dict.txt
+```
+
+We can now rename (and replace) the dictionary:
+
+``` bash
+mv sorted-dict.txt dict.txt
+```
+
+
+
+
+

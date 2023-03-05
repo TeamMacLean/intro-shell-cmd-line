@@ -1,5 +1,61 @@
 [
   {
+    "objectID": "01-intro.html#how-to-access-the-shell",
+    "href": "01-intro.html#how-to-access-the-shell",
+    "title": "1  Introduction to the shell command line",
+    "section": "2.1 How to access the shell",
+    "text": "2.1 How to access the shell\nYou access the shell using the “terminal”. The terminal is a window into which we will type commands in. The terminal is already available on Mac and Linux. For windows you must download a separate program."
+  },
+  {
+    "objectID": "01-intro.html#starting-with-the-shell",
+    "href": "01-intro.html#starting-with-the-shell",
+    "title": "1  Introduction to the shell command line",
+    "section": "2.2 Starting with the shell",
+    "text": "2.2 Starting with the shell\nWe will spend most of our time learning about the basics of the shell by manipulating some experimental data from a hearing test.\n\n2.2.1 Making a new directory\nFirst, we’re going to create a new directory to work in using the command mkdir which stands for “make directory”.\n\n\n\n\n\n\nNote\n\n\n\nThe word “directory” a location for storing files on a computer and it is synonym to “folder”.\n\n\nTo create the directory, we must type the following command in the terminal and hit return to execute the command.\n$ mkdir training\n\n\n2.2.2 Listing and navigating\nNow let’s see if our new directory was created using the command ls that stands for “list” or “listing”.\n$ ls\nYou should see your new directory called “training” in the list displayed in the terminal.\nNow we’re going to go into that directory using the command cd which stands for “change directory”.\n$ cd training\nNow let’s look at see what’s in here. There should be nothing right now, because we just made it, but let’s check using the command ls again.\nNow we are going to create a text file using the command touch\n$ touch file.txt\nWe can now check with if the file was created using the ls command again.\nNow we’re going to download the data for this tutorial. For this you’ll need internet access, because you’re going to get it off the web. Enter the command:\n$ git clone https://github.com/clarajegousse/training-data\nThis command will grab all of the data needed for this workshop from the internet.\nNow let’s check to see that we got the data.\n$ ls\nIn there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: ls -F\n$ ls -F\nAnything with a / after it is a directory. Things with a * after them are programs. If there’s after the name, then it’s a file.\nYou can also use the command ls -l to see whether items in a directory are files or directories. ls -l gives a lot more information too, such as the size of the file.\n$ ls -l\nSo, we can see that we have several files, directories and a program. Great!"
+  },
+  {
+    "objectID": "01-intro.html#manuals",
+    "href": "01-intro.html#manuals",
+    "title": "1  Introduction to the shell command line",
+    "section": "2.4 Manuals",
+    "text": "2.4 Manuals\nWe can consult the manual using the following:\n$ man ls\nTo exit the manual, hit the q key to “quit”.\nEvery single command has its own manual. Earlier, we used the command cd and we can also consult the manual for cd:\n$ man cd\n\n\n\n\n\n\nTip\n\n\n\nPrograms that are run from the command line can be complex. To see an example, open up the manual page for the find program. No one can possibly learn all of these arguments, of course. So you will probably find yourself referring back to the manual page frequently."
+  },
+  {
+    "objectID": "02-structure.html#moving-around-the-file-system",
+    "href": "02-structure.html#moving-around-the-file-system",
+    "title": "2  The directory file structure",
+    "section": "2.1 Moving around the file system",
+    "text": "2.1 Moving around the file system\nLet’s practice moving around a bit.\nWe’re going to work in that data directory we just downloaded. Now we know that training-data is a directory/folder, thus we can go into that directory:\n$ cd training-data\nAnd now, let’s check where we are:\n$ pwd\nThis is called a hierarchical file system structure, like an upside down tree with root (/) at the base.\nWhen you are working at your computer (or log in to a remote computer), you are on one of the branches of that tree, your home directory (/home/username).\nNow we can list the content of training-data:\n$ ls\nTo return to our training directory that is higher in the tree (closer to the root), we can use the following:\n$ cd ..\nNow let’s check where we are again with pwd."
+  },
+  {
+    "objectID": "02-structure.html#go-home",
+    "href": "02-structure.html#go-home",
+    "title": "2  The directory file structure",
+    "section": "2.2 Go home",
+    "text": "2.2 Go home\nTo return to your home directory, you can use the command cd:\n$ cd ~\nYou can also use\n$ pwd"
+  },
+  {
+    "objectID": "01-intro.html#arguments",
+    "href": "01-intro.html#arguments",
+    "title": "1  Introduction to the shell command line",
+    "section": "2.3 Arguments",
+    "text": "2.3 Arguments\nMost commands offer additional arguments that control their exact behavior. For example, -F and -l are arguments to ls. The ls program, like many programs, take a lot of arguments. But how do we know what the options are to particular commands? We can consult the manual!"
+  },
+  {
+    "objectID": "02-structure.html#listing-the-contents-of-other-directories",
+    "href": "02-structure.html#listing-the-contents-of-other-directories",
+    "title": "2  The directory file structure",
+    "section": "2.3 Listing the contents of other directories",
+    "text": "2.3 Listing the contents of other directories\nBy default, the ls commands lists the contents of the working directory (i.e. the directory you are in). You can always find the directory you are in using the pwd command. However, you can also give ls the names of other directories to view. Navigate to the home directory if you are not already there.\nNow that we are in your home directory, we can list the content of training :\n$ ls training\nThis will list the contents of the training directory without you having to navigate there.\nThe cd command works in a similar way. Try entering:\n$ cd training/training-data\nand you will jump directly from your home directory to training-data without having to go through the intermediate directory.\nWe can now go back to the home directory either directory by using .. twice:\n$ cd ..\n$ cd ..\nor by using the ~:\n$ cd ~"
+  },
+  {
+    "objectID": "02-structure.html#full-vs.-relative-paths",
+    "href": "02-structure.html#full-vs.-relative-paths",
+    "title": "2  The directory file structure",
+    "section": "2.4 Full vs. Relative Paths",
+    "text": "2.4 Full vs. Relative Paths\nThe cd command takes an argument which is the directory name. Directories can be specified using either a relative path a full path. The directories on the computer are arranged into a hierarchy. The full path tells you where a directory is in that hierarchy. Navigate to the home directory. Now, enter the pwd command and you should see:\n/home/[username]\nwhich is the full name of your home directory. This tells you that you are in a directory called username, which sits inside a directory called home which sits inside the very top directory in the hierarchy. The very top of the hierarchy is a directory called / which is usually referred to as the root directory. So, to summarize: username is a directory in home which is a directory in /.\nNow enter the following command:\n$ cd ~/[username]/training/training-data\nThis jumps to training-data. Now go back to the home directory (cd). We saw earlier that the command:\ncd training/training-data\nhad the same effect - it took us to the training-data directory. But, instead of specifying the full path, we specified a relative path. In other words, we specified the path relative to our current directory (pwd). A full path always starts with a /. A relative path does not. You can usually use either a full path or a relative path depending on what is most convenient. If we are in the home directory, it is more convenient to just enter the relative path since it involves less typing.\nOver time, it will become easier for you to keep a mental note of the structure of the directories that you are using and how to quickly navigate amongst them."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "intro-shell-cmd-line",
@@ -14,164 +70,122 @@
     "text": "Why learn how to use the shell\nThere are many reasons to learn about the shell.\n\nFor most bioinformatics tools, you have to use the shell. There is no graphical interface. If you want to work in metagenomics or genomics you’re going to need to use the shell.\nThe shell gives you power. The command line gives you the power to do your work more efficiently and more quickly. When you need to do things tens to hundreds of times, knowing how to use the shell is transformative.\nTo use remote computers or cloud computing, you need to use the shell.\nWe’re going to use it in this class, for all of the reasons above."
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "03-tips-tricks.html#tips-and-tricks",
+    "href": "03-tips-tricks.html#tips-and-tricks",
+    "title": "3  Tips and tricks",
+    "section": "3.1 Tips and tricks",
+    "text": "3.1 Tips and tricks\nWe already know one shortcut to go quickly to the home directory:\ncd ~\n\n3.1.1 Wild cards\nNavigate to the ~/training/training-data/references directory. This directory contains five references. If we type ls, we will see that there are a bunch of files. By default, ls lists all of the files in a given directory. The * character is a shortcut for “everything”. Thus, if you enter ls *, you will see all of the contents of a given directory. Now try this command:\nls *.bib\nNow let’s list all the files that start with ‘cit’\nls cit*\n\n\n3.1.2 Tab Completion\nNavigate to the ~/training/ directory.\nTyping out directory names can waste a lot of time. When you start typing out the name of a directory, then hit the tab key, the shell will try to fill in the rest of the directory name.\nFor example, enter:\ncd t<tab>\nThe shell will fill in the rest of the directory name for training. Now go to training/training-data.\nls r<tab><tab>\nWhen you hit the first tab, nothing happens. The reason is that there are multiple directories in the home directory which start with r. Thus, the shell does not know which one to fill in. When you hit tab again, the shell will list the possible choices.\nTab completion can also fill in the names of programs. For example, enter e<tab><tab>. You will see the name of every program that starts with an e. One of those is echo. If you enter ec<tab> you will see that tab completion works."
+  },
+  {
+    "objectID": "03-tips-tricks.html#history",
+    "href": "03-tips-tricks.html#history",
+    "title": "3  Tips and tricks",
+    "section": "3.3 History",
+    "text": "3.3 History\nYou can easily access previous commands. Hit the up arrow. Hit it again. You can step backwards through your command history. The down arrow takes your forwards in the command history.\n^-C will cancel the command you are writing, and give you a fresh prompt.\n^-R (arrow pointing up) will do a reverse-search through your command history. This is very useful.\nYou can also review your recent commands with the history command. Just enter:\nhistory\nto see a numbered list of recent commands, including this just issues history command. You can reuse one of these commands directly by referring to the number of that command.\nIf your history looked like this:\n258 cd ..\n259 ls *\n260 cd ~\nthen you could repeat command #259 by simply entering:\n!259\n(that’s an exclamation mark)."
+  },
+  {
+    "objectID": "03-tips-tricks.html#which-program",
+    "href": "03-tips-tricks.html#which-program",
+    "title": "3  Tips and tricks",
+    "section": "3.4 Which program?",
+    "text": "3.4 Which program?\nCommands like ls, rm, echo, and cd are just ordinary programs on the computer. A program is just a file that you can execute. The program which tells you the location of a particular program. For example:\nwhich ls\nWill return /bin/ls. Thus, we can see that ls is a program that sits inside of the /bin directory. Now enter:\nwhich find\nYou will see that find is a program that sits inside of the /usr/bin directory.\nSo … when we enter a program name, like ls, and hit enter, how does the shell know where to look for that program? How does it know to run /bin/ls when we enter ls. The answer is that when we enter a program name and hit enter, there are a few standard places that the shell automatically looks. If it can’t find the program in any of those places, it will print an error saying “command not found”. Enter the command:\necho $PATH\nThis will print out the value of the PATH environment variable. More on environment variables later. Notice that a list of directories, separated by colon characters, is listed. These are the places the shell looks for programs to run. If your program is not in this list, then an error is printed. The shell ONLY checks in the places listed in the PATH environment variable.\nNavigate to the shell directory and list the contents. You will notice that there is a program (executable file) called hello in this directory. Now, try to run the program by entering:\nhello\nYou should get an error saying that hello cannot be found. That is because the directory ~/[username]/training is not in the PATH. You can run the hello program by entering:\n./hello\nRemember that . is a shortcut for the current working directory. This tells the shell to run the hello program which is located right here. So, you can run any program by entering the path to that program. You can run hello equally well by specifying:\n~/training/hello\nWhen there are no / characters, the shell assumes you want to look in one of the default places for the program."
+  },
+  {
+    "objectID": "03-tips-tricks.html#examining-files",
+    "href": "03-tips-tricks.html#examining-files",
+    "title": "3  Tips and tricks",
+    "section": "3.5 Examining Files",
+    "text": "3.5 Examining Files\nWe now know how to switch directories, run programs, and look at the contents of directories, but how do we look at the contents of files?\nThe easiest way to examine a file is to just print out all of the contents using the program cat. Enter the following command:\ncat file.txt\nThis file is empty because we created this file just earlier and we did not write anything in it. If we navigate to ~/training/training-data/, we can check the file called tsl.txt”\ncat tsl.txt\nNow let’s do:\ncat tsl.txt tsl.txt\nIt will print out the contents of tsl.txt twice. cat actually stands for “concatenate” and takes a list of file names and writes them out one after another. cat is a terrific program, but when the file is really big, it can be annoying to use. The program, less, is useful for this case. Enter the following command:\nless dict.txt\nless opens the file, and lets you navigate through it. The commands are identical to the man program.\nSome commands in less\n\n\n\nkey\naction\n\n\n\n\n“space”\nto go forward\n\n\n“b”\nto go backwarsd\n\n\n“g”\nto go to the beginning\n\n\n“G”\nto go to the end\n\n\n“q”\nto quit\n\n\n\nless also gives you a way of searching through files. Just hit the / key to begin a search. Enter the name of the word you would like to search for and hit enter. It will jump to the next location where that word is found. Try searching the dict.txt file for the word “cat”. If you hit / then enter, less will just repeat the previous search. less searches from the current location and works its way forward. If you are at the end of the file and search for the word “cat”, less will not find it. You need to go to the beginning of the file and search.\nRemember, the man program actually uses less internally and therefore uses the same commands, so you can search documentation using / as well!\nAnother option for examining the content of a file is to look at the first/last few lines with the command head and tail.\nhead dict.txt\ntail dict.txt"
+  },
+  {
+    "objectID": "03-tips-tricks.html#catching-patterns",
+    "href": "03-tips-tricks.html#catching-patterns",
+    "title": "3  Tips and tricks",
+    "section": "3.6 Catching patterns",
+    "text": "3.6 Catching patterns\nNow, we would like to see all the word containing the letter “e” in the dictionary. We can use the command grep:\ngrep 'e' dict.txt\nNow let’s grab all the words in the dictionary that contain the pattern “cat”\ngrep 'cat' dict.txt\nNow we can use more complicated patterns called ‘regular expressions’ to catch the lines we are interested in. For example, all the words in the dictionary starting with ‘e’.\ngrep '^e' dict.txt\nor all the words in the dictionary ending with ‘e’.\ngrep 'e$' dict.txt"
+  },
+  {
+    "objectID": "03-tips-tricks.html#redirection",
+    "href": "03-tips-tricks.html#redirection",
+    "title": "3  Tips and tricks",
+    "section": "3.7 Redirection",
+    "text": "3.7 Redirection\nHow about keeping a record of all the words we found ending with the letter ‘e’:\ngrep 'e$' dict.txt > ending.txt\nLet’s check the content of this new file ending.txt.\nhead ending.txt\nless ending.txt\ncat ending.txt"
+  },
+  {
+    "objectID": "03-tips-tricks.html#creating-moving-copying-and-removing",
+    "href": "03-tips-tricks.html#creating-moving-copying-and-removing",
+    "title": "3  Tips and tricks",
+    "section": "3.8 Creating, moving, copying, and removing",
+    "text": "3.8 Creating, moving, copying, and removing\nNow let’s backup our work.\nmkdir backup\nWe will now move our newly created file to the backup directory:\nmv ending.txt backup/\nWe can also copy the entire dictionary dict.txt to the backup directory.\ncp dict.txt backup/\nWe insure that the files have been either moved or copied.\nls backup/\nTo clarify within the backup directory that it contains a copy of the directory. There is no such command as rename, but we can use the mv command instead:\nmv backup/dict.txt backup/dict-copy.txt\nWe can now check if the change was made:\nls backup/\nFor extra safety, we want to hide th backup directory In this case, we create a copy of our backup directory with the cp command. By default, cp works for files (not directory/folders), consequently we must use the argument -r, which stands for recursive, to copy the entire directory (and its content).\ncp -r backup/ .backup/\n\n\n\n\n\n\nNote\n\n\n\nIn Unix-like operating systems, any file or folder that starts with a dot character (for example, /home/user/. config), commonly called a dot file or dotfile, is to be treated as hidden – that is, the ls command does not display them unless the -a or -A flags ( ls -a or ls -A ) are used.\n\n\nNow we can remove the regular backup directory:\nrm backup"
+  },
+  {
+    "objectID": "03-tips-tricks.html#count-the-words",
+    "href": "03-tips-tricks.html#count-the-words",
+    "title": "3  Tips and tricks",
+    "section": "3.9 Count the words",
+    "text": "3.9 Count the words\nThe wc program (word count) counts the number of lines, words, and characters in one or more files.\nMake sure you are in the training-data directory, then enter the following command:\nwc tsl.txt\nFor each of the files indicated, wc prints a line with three numbers. The first is the number of lines in that file. The second is the number of words. Finally, the total number of characters is indicated. The final line contains this information summed over all of the files.\nwc *.txt"
+  },
+  {
+    "objectID": "03-tips-tricks.html#the-awesome-power-of-the-pipe",
+    "href": "03-tips-tricks.html#the-awesome-power-of-the-pipe",
+    "title": "3  Tips and tricks",
+    "section": "3.10 The awesome power of the Pipe",
+    "text": "3.10 The awesome power of the Pipe\nLet’s say we want to know the number of words containing the pattern ‘ef’ in the dictionary. We know both command grep and wc, and we execute them one after the other using the pipe |.\ngrep 'ef' dict.txt | wc\nLet’s see if the word ‘effector’ is in the dictionary\ngrep 'effector' dict.txt\nWe can open and edit the file within the Terminal, using a program called nano:\nnano dict.txt\nAdd the word ‘effector’ at the beginning of the file and use the Ctrl-x command to save and exit the text editor.\nWe verify that the change was made:\nhead dict.txt\nIndeed, the word effector is now at the beginning of the dictionary. Great, but a dictionary should be sorted by alphabetical order. Let’s reorder the words in the dictionary using the command sort\nsort dict.txt > sorted-dict.txt\nWe verify that the change was made:\nhead sorted-dict.txt\ngrep 'effector' sorted-dict.txt\ngrep '^effect' sorted-dict.txt\nWe can now rename (and replace) the dictionary:\nmv sorted-dict.txt dict.txt"
+  },
+  {
+    "objectID": "04-files.html",
+    "href": "04-files.html",
+    "title": "4  Manipulating files",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "5 Searching files\nYou can search the contents of a file using the command grep. The grep program is very powerful and useful especially when combined with other commands by using the pipe. Navigate to the Bert directory. Every data file in this directory has a line which says “Range”. Lets list all of the ranges from the interviews that Bert conducted:\ngrep Range *\n\n\n6 For Future Reference\n\n\n7 Finding files\nThe find program can be used to find files based on arbitrary criteria. Navigate to the data directory and enter the following command:\nfind . -print\nThis prints the name of every file or directory, recursively, starting from the current directory. Let’s exclude all of the directories:\nfind . -type f -print\nThis tells find to locate only files. Now try these commands:\nfind . -type f -name \"*1*\"\nfind . -type f -name \"*1*\" -or -name \"*2*\" -print\nfind . -type f -name \"*1*\" -and -name \"*2*\" -print\nThe find command can acquire a list of files and perform some operation on each file. Try this command out:\nfind . -type f -exec grep Volume {} \\;\nThis command finds every file starting from .. Then it searches each file for a line which contains the word “Volume”. The {} refers to the name of each file. The trailing \\; is used to terminate the command. This command is slow, because it is calling a new instance of grep for each item the find returns.\nA faster way to do this is to use the xargs command:\nfind . -type f -print | xargs grep Volume\nfind generates a list of all the files we are interested in, then we pipe them to xargs. xargs takes the items given to it and passes them as arguments to grep. xargs generally only creates a single instance of grep (or whatever program it is running)."
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
+    "objectID": "01-intro.html",
+    "href": "01-intro.html",
+    "title": "1  Introduction to the shell command line",
     "section": "",
-    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+    "text": "2 Introduction"
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
+    "objectID": "02-structure.html",
+    "href": "02-structure.html",
+    "title": "3  The directory file structure",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "4 The directory file structure\nAs you’ve already just seen, you can move around in different directories or folders at the command line. Why would you want to do this, rather than just navigating around the normal way.\nWhen you’re working with programs, you’re working with your data and it’s key to be able to have that data in the right place and make sure the program has access to the data. Many of the problems people run in to with command line bioinformatics programs is not having the data in the place the program expects it to be.\nNow let’s see where we are by using the command pwd which stands for “print working directory”:\nThe output should look like /Users/[username]/training (/home/[username]/training) but with you username. This is called a hierarchical file system structure, like an upside down tree with root (/) at the base.\nWhen you are working at your computer (or log in to a remote computer), you are on one of the branches of that tree, your home directory (/home/username)."
   },
   {
-    "objectID": "intro.html#objectives",
-    "href": "intro.html#objectives",
-    "title": "1  Introduction",
-    "section": "1.1 Objectives",
-    "text": "1.1 Objectives\n\nWhat is the shell?\nHow do you access it?\nHow do you use it?\n\nGetting around the Unix file system\nlooking at files\nmanipulating files\nautomating tasks\n\nWhat is it good for?\nWhere are resources where I can learn more? (because the shell is awesome)"
+    "objectID": "03-tips-tricks.html#wild-cards",
+    "href": "03-tips-tricks.html#wild-cards",
+    "title": "3  Tips and tricks",
+    "section": "3.1 Wild cards",
+    "text": "3.1 Wild cards\nNavigate to the ~/training/training-data/references directory. This directory contains five references. If we type ls, we will see that there are a bunch of files. By default, ls lists all of the files in a given directory. The * character is a shortcut for “everything”. Thus, if you enter ls *, you will see all of the contents of a given directory. Now try this command:\nls *.bib\nNow let’s list all the files that start with ‘cit’\nls cit*"
   },
   {
-    "objectID": "intro.html#what-is-the-shell",
-    "href": "intro.html#what-is-the-shell",
-    "title": "1  Introduction",
-    "section": "1.2 What is the shell?",
-    "text": "1.2 What is the shell?\nThe shell is a program that presents a command line interface which allows you to control your computer using commands entered with a keyboard instead of controlling graphical user interfaces (GUIs) with a mouse/keyboard combination.\nThere are many reasons to learn about the shell.\n\nFor most bioinformatics tools, you have to use the shell. There is no graphical interface. If you want to work in metagenomics or genomics you’re going to need to use the shell.\nThe shell gives you power. The command line gives you the power to do your work more efficiently and more quickly. When you need to do things tens to hundreds of times, knowing how to use the shell is transformative.\nTo use remote computers or cloud computing, you need to use the shell.\nWe’re going to use it in this class, for all of the reasons above.\n\n\n\n\nAutomation\n\n\nUnix is user-friendly. It’s just very selective about who its friends are. - Anonymous\nToday we’re going to go through how to access Unix/Linux and some of the basic shell commands."
+    "objectID": "03-tips-tricks.html#tab-completion",
+    "href": "03-tips-tricks.html#tab-completion",
+    "title": "3  Tips and tricks",
+    "section": "3.2 Tab Completion",
+    "text": "3.2 Tab Completion\nNavigate to the ~/training/ directory.\nTyping out directory names can waste a lot of time. When you start typing out the name of a directory, then hit the tab key, the shell will try to fill in the rest of the directory name.\nFor example, enter:\ncd t<tab>\nThe shell will fill in the rest of the directory name for training. Now go to training/training-data.\nls r<tab><tab>\nWhen you hit the first tab, nothing happens. The reason is that there are multiple directories in the home directory which start with r. Thus, the shell does not know which one to fill in. When you hit tab again, the shell will list the possible choices.\nTab completion can also fill in the names of programs. For example, enter e<tab><tab>. You will see the name of every program that starts with an e. One of those is echo. If you enter ec<tab> you will see that tab completion works."
   },
   {
-    "objectID": "intro.html#information-on-the-shell",
-    "href": "intro.html#information-on-the-shell",
-    "title": "1  Introduction",
-    "section": "1.3 Information on the shell",
-    "text": "1.3 Information on the shell\nShell cheat sheets:\n\nhttp://fosswire.com/post/2007/08/unixlinux-command-cheat-sheet/\nhttps://github.com/swcarpentry/boot-camps/blob/master/shell/shell_cheatsheet.md\n\nExplain shell - a web site where you can see what the different components of a shell command are doing.\n\nhttp://explainshell.com\nhttp://www.commandlinefu.com"
+    "objectID": "03-tips-tricks.html#examining-and-inspecting-files",
+    "href": "03-tips-tricks.html#examining-and-inspecting-files",
+    "title": "3  Tips and tricks",
+    "section": "3.5 Examining and inspecting files",
+    "text": "3.5 Examining and inspecting files\nWe now know how to switch directories, run programs, and look at the contents of directories, but how do we look at the contents of files?\nThe easiest way to examine a file is to just print out all of the contents using the program cat. Enter the following command:\ncat file.txt\nThis file is empty because we created this file just earlier and we did not write anything in it. If we navigate to ~/training/training-data/, we can check the file called tsl.txt”\ncat tsl.txt\nNow let’s do:\ncat tsl.txt tsl.txt\nIt will print out the contents of tsl.txt twice. cat actually stands for “concatenate” and takes a list of file names and writes them out one after another. cat is a terrific program, but when the file is really big, it can be annoying to use. The program, less, is useful for this case. Enter the following command:\nless dict.txt\nless opens the file, and lets you navigate through it. The commands are identical to the man program.\nSome commands in less\n\n\n\nkey\naction\n\n\n\n\n“space”\nto go forward\n\n\n“b”\nto go backwarsd\n\n\n“g”\nto go to the beginning\n\n\n“G”\nto go to the end\n\n\n“q”\nto quit\n\n\n\nless also gives you a way of searching through files. Just hit the / key to begin a search. Enter the name of the word you would like to search for and hit enter. It will jump to the next location where that word is found. Try searching the dict.txt file for the word “cat”. If you hit / then enter, less will just repeat the previous search. less searches from the current location and works its way forward. If you are at the end of the file and search for the word “cat”, less will not find it. You need to go to the beginning of the file and search.\nRemember, the man program actually uses less internally and therefore uses the same commands, so you can search documentation using / as well!\nAnother option for examining the content of a file is to look at the first/last few lines with the command head and tail.\nhead dict.txt\ntail dict.txt"
   },
   {
-    "objectID": "intro.html#outline",
-    "href": "intro.html#outline",
-    "title": "1  Introduction",
-    "section": "1.4 Outline",
-    "text": "1.4 Outline\n\nA shell use case\nHow to access the shell"
+    "objectID": "03-tips-tricks.html#inspecting-files",
+    "href": "03-tips-tricks.html#inspecting-files",
+    "title": "3  Tips and tricks",
+    "section": "3.5 Inspecting files",
+    "text": "3.5 Inspecting files\nWe now know how to switch directories, run programs, and look at the contents of directories, but how do we look at the contents of files?\nThe easiest way to examine a file is to just print out all of the contents using the program cat. Enter the following command:\ncat file.txt\nThis file is empty because we created this file just earlier and we did not write anything in it. If we navigate to ~/training/training-data/, we can check the file called tsl.txt”\ncat tsl.txt\nNow let’s do:\ncat tsl.txt tsl.txt\nIt will print out the contents of tsl.txt twice. cat actually stands for “concatenate” and takes a list of file names and writes them out one after another. cat is a terrific program, but when the file is really big, it can be annoying to use. The program, less, is useful for this case. Enter the following command:\nless dict.txt\nless opens the file, and lets you navigate through it. The commands are identical to the man program.\nSome commands in less\n\n\n\nkey\naction\n\n\n\n\n“space”\nto go forward\n\n\n“b”\nto go backwarsd\n\n\n“g”\nto go to the beginning\n\n\n“G”\nto go to the end\n\n\n“q”\nto quit\n\n\n\nless also gives you a way of searching through files. Just hit the / key to begin a search. Enter the name of the word you would like to search for and hit enter. It will jump to the next location where that word is found. Try searching the dict.txt file for the word “cat”. If you hit / then enter, less will just repeat the previous search. less searches from the current location and works its way forward. If you are at the end of the file and search for the word “cat”, less will not find it. You need to go to the beginning of the file and search.\nRemember, the man program actually uses less internally and therefore uses the same commands, so you can search documentation using / as well!\nAnother option for examining the content of a file is to look at the first/last few lines with the command head and tail.\nhead dict.txt\ntail dict.txt"
   },
   {
-    "objectID": "intro.html#an-automation-use-case",
-    "href": "intro.html#an-automation-use-case",
-    "title": "1  Introduction",
-    "section": "1.5 An automation use case",
-    "text": "1.5 An automation use case\nText Complexity in Newspapers pdf\nAnother newspaper case\nGet the front page of the newspaper from a particular newspaper in different years\nhttp://chroniclingamerica.loc.gov/lccn/sn98066406/issues/first_pages/\nCount occurances of a particular word"
-  },
-  {
-    "objectID": "intro.html#how-to-access-the-shell",
-    "href": "intro.html#how-to-access-the-shell",
-    "title": "1  Introduction",
-    "section": "1.6 How to access the shell",
-    "text": "1.6 How to access the shell\nThe shell is already available on Mac and Linux. For Windows, you’ll have to download a separate program."
-  },
-  {
-    "objectID": "intro.html#mac",
-    "href": "intro.html#mac",
-    "title": "1  Introduction",
-    "section": "1.7 Mac",
-    "text": "1.7 Mac\nOn Mac the shell is available through Terminal Applications -> Utilities -> Terminal Go ahead and drag the Terminal application to your Dock for easy access."
-  },
-  {
-    "objectID": "intro.html#windows",
-    "href": "intro.html#windows",
-    "title": "1  Introduction",
-    "section": "1.8 Windows",
-    "text": "1.8 Windows\nFor Windows, we’re going to be using gitbash. Download and install gitbash Open up the program."
-  },
-  {
-    "objectID": "intro.html#linux",
-    "href": "intro.html#linux",
-    "title": "1  Introduction",
-    "section": "1.9 Linux",
-    "text": "1.9 Linux\nWell, you should be set."
-  },
-  {
-    "objectID": "intro.html#starting-with-the-shell",
-    "href": "intro.html#starting-with-the-shell",
-    "title": "1  Introduction",
-    "section": "1.10 Starting with the shell",
-    "text": "1.10 Starting with the shell\nWe will spend most of our time learning about the basics of the shell by manipulating some experimental data from a hearing test.\nWe’re going to create a directory that we’re going to do this work in and then download the data.\nTo create the directory type:\nmkdir edamame\nThis means, make directory ‘edamame’\nNow we’re going to go in to that directory\ncd edamame\nThis stands for ‘change directory’\nNow let’s look at see what’s in here. There should be nothing right now, because we just made it, but let’s check. Type: ls\nls stands for ‘list’ and it lists the contents of a directory.\nNow we’re going to download the data for the tutorial. For this you’ll need internet access, because you’re going to get it off the web. Enter the command:\ngit clone https://github.com/tracykteal/msu_al340.git\nThis command will grab all of the data needed for this workshop from the internet. (We’re not going to talk about git right now, but it’s a tool for doing version control.)\nNow let’s check to see that we got the data. Again type: ls Now we should see a list of a lot of files, including something called data.\nIn there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: ls -F Anything with a “/” after it is a directory. Things with a “*” after them are programs. If there’s after the name, then it’s a file.\nYou can also use the command ls -l to see whether items in a directory are files or directories. ls -l gives a lot more information too, such as the size of the file\nSo, we can see that we have several files, directories and a program. Great!"
-  },
-  {
-    "objectID": "01-intro.html#objectives",
-    "href": "01-intro.html#objectives",
-    "title": "1  Introduction",
-    "section": "1.1 Objectives",
-    "text": "1.1 Objectives\n\nWhat is the shell?\nHow do you access it?\nHow do you use it?\n\nGetting around the Unix file system\nlooking at files\nmanipulating files\nautomating tasks\n\nWhat is it good for?\nWhere are resources where I can learn more? (because the shell is awesome)"
-  },
-  {
-    "objectID": "01-intro.html#what-is-the-shell",
-    "href": "01-intro.html#what-is-the-shell",
-    "title": "1  Introduction",
-    "section": "1.2 What is the shell?",
-    "text": "1.2 What is the shell?\nThe shell is a program that presents a command line interface which allows you to control your computer using commands entered with a keyboard instead of controlling graphical user interfaces (GUIs) with a mouse/keyboard combination.\nThere are many reasons to learn about the shell.\n\nFor most bioinformatics tools, you have to use the shell. There is no graphical interface. If you want to work in metagenomics or genomics you’re going to need to use the shell.\nThe shell gives you power. The command line gives you the power to do your work more efficiently and more quickly. When you need to do things tens to hundreds of times, knowing how to use the shell is transformative.\nTo use remote computers or cloud computing, you need to use the shell.\nWe’re going to use it in this class, for all of the reasons above.\n\n\n\n\nAutomation\n\n\nUnix is user-friendly. It’s just very selective about who its friends are. - Anonymous\nToday we’re going to go through how to access Unix/Linux and some of the basic shell commands."
-  },
-  {
-    "objectID": "01-intro.html#information-on-the-shell",
-    "href": "01-intro.html#information-on-the-shell",
-    "title": "1  Introduction",
-    "section": "1.3 Information on the shell",
-    "text": "1.3 Information on the shell\nShell cheat sheets:\n\nhttp://fosswire.com/post/2007/08/unixlinux-command-cheat-sheet/\nhttps://github.com/swcarpentry/boot-camps/blob/master/shell/shell_cheatsheet.md\n\nExplain shell - a web site where you can see what the different components of a shell command are doing.\n\nhttp://explainshell.com\nhttp://www.commandlinefu.com"
-  },
-  {
-    "objectID": "01-intro.html#outline",
-    "href": "01-intro.html#outline",
-    "title": "1  Introduction",
-    "section": "1.4 Outline",
-    "text": "1.4 Outline\n\nA shell use case\nHow to access the shell"
-  },
-  {
-    "objectID": "01-intro.html#an-automation-use-case",
-    "href": "01-intro.html#an-automation-use-case",
-    "title": "1  Introduction",
-    "section": "1.5 An automation use case",
-    "text": "1.5 An automation use case\nText Complexity in Newspapers pdf\nAnother newspaper case\nGet the front page of the newspaper from a particular newspaper in different years\nhttp://chroniclingamerica.loc.gov/lccn/sn98066406/issues/first_pages/\nCount occurances of a particular word"
-  },
-  {
-    "objectID": "01-intro.html#how-to-access-the-shell",
-    "href": "01-intro.html#how-to-access-the-shell",
-    "title": "1  Introduction",
-    "section": "1.1 How to access the shell",
-    "text": "1.1 How to access the shell\nYou access the shell using the “terminal”. The terminal is a window into which we will type commands in. The terminal is already available on Mac and Linux. For windows you must download a separate program."
-  },
-  {
-    "objectID": "01-intro.html#mac",
-    "href": "01-intro.html#mac",
-    "title": "1  Introduction",
-    "section": "1.2 Mac",
-    "text": "1.2 Mac\nOn Mac the shell is available through Terminal Applications -> Utilities -> Terminal Go ahead and drag the Terminal application to your Dock for easy access."
-  },
-  {
-    "objectID": "01-intro.html#windows",
-    "href": "01-intro.html#windows",
-    "title": "1  Introduction",
-    "section": "1.3 Windows",
-    "text": "1.3 Windows\nFor Windows, we’re going to be using gitbash. Download and install gitbash Open up the program."
-  },
-  {
-    "objectID": "01-intro.html#linux",
-    "href": "01-intro.html#linux",
-    "title": "1  Introduction",
-    "section": "1.4 Linux",
-    "text": "1.4 Linux\nWell, you should be set."
-  },
-  {
-    "objectID": "01-intro.html#starting-with-the-shell",
-    "href": "01-intro.html#starting-with-the-shell",
-    "title": "1  Introduction",
-    "section": "1.2 Starting with the shell",
-    "text": "1.2 Starting with the shell\nWe will spend most of our time learning about the basics of the shell by manipulating some experimental data from a hearing test.\nFirst, we’re going to create a new directory to work in using the command mkdir which stands for “make directory”.\n\n\n\n\n\n\nNote\n\n\n\nThe word “directory” a location for storing files on a computer and it is synonym to “folder”.\n\n\nTo create the directory, we must type the following command in the terminal and hit return to execute the command.\n$ mkdir training\nNow let’s see if our new directory was created using the command ls that stands for “list” or “listing”.\n$ ls\nYou should see your new directory called “training” in the list displayed in the terminal.\nNow we’re going to go into that directory using the command cd which stands for “change directory”.\n$ cd training\nNow let’s look at see what’s in here. There should be nothing right now, because we just made it, but let’s check using the command ls again.\nNow we are going to create a text file using the command touch\n$ touch file.txt\nWe can now check with if the file was created using the ls command again.\nNow we’re going to download the data for this tutorial. For this you’ll need internet access, because you’re going to get it off the web. Enter the command:\ngit clone https://github.com/clarajegousse/training-data\nThis command will grab all of the data needed for this workshop from the internet. (We’re not going to talk about git right now, but it’s a tool for doing version control.)\nNow let’s check to see that we got the data. Again type: ls Now we should see a list of a lot of files, including something called data.\nIn there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: ls -F Anything with a “/” after it is a directory. Things with a “*” after them are programs. If there’s after the name, then it’s a file.\nYou can also use the command ls -l to see whether items in a directory are files or directories. ls -l gives a lot more information too, such as the size of the file\nSo, we can see that we have several files, directories and a program. Great!"
+    "objectID": "conclusion.html",
+    "href": "conclusion.html",
+    "title": "4  Conclusion",
+    "section": "",
+    "text": "By the end of this training session, you will be able to use the command line. The purpose of this training is to give you the very basics so that you can feel confident enough to start learning and building your command line skills by yourself.\nWith this knowledge, you are now ready to have access to the HPC.\nOnce your access is granted, you can go over the courses available here:\n\nhttps://github.com/clarajegousse/tsl-shell-genomics\nhttps://clarajegousse.github.io/tsl-wrangling-genomics\n\nWhen on site (or using VPN), you can access this summary:\nhttps://bioinformatics.tsl.ac.uk/cheatsheet/hpc/terminal/linux/centos/2021/02/12/linux-terminal-cheatsheet-for-HPC.html"
   }
 ]

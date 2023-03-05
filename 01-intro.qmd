@@ -1,3 +1,8 @@
+---
+title: "Introduction to the shell command line"
+author: "Clara Jégousse"
+---
+
 # Introduction
 
 ::: {.callout-tip icon="false"}
@@ -11,9 +16,11 @@
 
 You access the shell using the "terminal". The terminal is a window into which we will type commands in. The terminal is already available on Mac and Linux. For windows you must download a separate program.
 
-## **Starting with the shell**
+## Starting with the shell
 
 We will spend most of our time learning about the basics of the shell by manipulating some experimental data from a hearing test.
+
+### Making a new directory
 
 First, we're going to create a new **directory** to work in using the command `mkdir` which stands for "**m**a**k**e **dir**ectory".
 
@@ -26,6 +33,8 @@ To create the directory, we must type the following command in the terminal and 
 ``` bash
 $ mkdir training
 ```
+
+### Listing and navigating
 
 Now let's see if our new directory was created using the command `ls` that stands for "list" or "listing".
 
@@ -53,14 +62,54 @@ We can now check with if the file was created using the `ls` command again.
 
 Now we're going to download the data for this tutorial. For this you'll need internet access, because you're going to get it off the web. Enter the command:
 
-    git clone https://github.com/clarajegousse/training-data
+``` bash
+$ git clone https://github.com/clarajegousse/training-data
+```
 
-This command will grab all of the data needed for this workshop from the internet. (We're not going to talk about git right now, but it's a tool for doing version control.)
+This command will grab all of the data needed for this workshop from the internet.
 
-Now let's check to see that we got the data. Again type: `ls` Now we should see a list of a lot of files, including something called data.
+Now let's check to see that we got the data.
 
-In there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: `ls -F` Anything with a "/" after it is a directory. Things with a "\*" after them are programs. If there's after the name, then it's a file.
+``` bash
+$ ls
+```
 
-You can also use the command `ls -l` to see whether items in a directory are files or directories. `ls -l` gives a lot more information too, such as the size of the file
+In there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: `ls -F`
+
+``` bash
+$ ls -F
+```
+
+Anything with a `/` after it is a directory. Things with a `*` after them are programs. If there's after the name, then it's a file.
+
+You can also use the command `ls -l` to see whether items in a directory are files or directories. `ls -l` gives a lot more information too, such as the size of the file.
+
+``` bash
+$ ls -l
+```
 
 So, we can see that we have several files, directories and a program. Great!
+
+## **Arguments**
+
+Most commands offer additional arguments that control their exact behavior. For example, `-F` and `-l` are arguments to `ls`. The `ls` program, like many programs, take a lot of arguments. But how do we know what the options are to particular commands? We can consult the manual!
+
+## Manuals
+
+We can consult the manual using the following:
+
+``` bash
+$ man ls
+```
+
+To exit the manual, hit the `q` key to "**q**uit".
+
+Every single command has its own manual. Earlier, we used the command `cd` and we can also consult the manual for `cd`:
+
+``` bash
+$ man cd
+```
+
+::: callout-tip
+Programs that are run from the command line can be complex. To see an example, open up the manual page for the `find` program. No one can possibly learn all of these arguments, of course. So you will probably find yourself referring back to the manual page frequently.
+:::

@@ -1,0 +1,15 @@
+# Conclusion 
+
+By the end of this training session, you will be able to use the command line. The purpose of this training is to give you the very basics so that you can feel confident enough to start learning and building your command line skills by yourself.
+
+With this knowledge, you are now ready to have access to the HPC.
+
+Once your access is granted, you can go over the courses available here:
+
+-   <https://github.com/clarajegousse/tsl-shell-genomics>
+
+-   <https://clarajegousse.github.io/tsl-wrangling-genomics>
+
+When on site (or using VPN), you can access this summary:
+
+<https://bioinformatics.tsl.ac.uk/cheatsheet/hpc/terminal/linux/centos/2021/02/12/linux-terminal-cheatsheet-for-HPC.html>

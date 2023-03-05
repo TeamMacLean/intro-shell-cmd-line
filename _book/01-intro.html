@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Clara Jégousse">
 
-<title>intro-shell-cmd-line - 1&nbsp; Introduction</title>
+<title>intro-shell-cmd-line - 1&nbsp; Introduction to the shell command line</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to the shell command line</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -163,27 +164,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./01-intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to the shell command line</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-structure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">structure</span></a>
+  <a href="./02-structure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The directory file structure</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03-tips-tricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">03-tips-tricks.qmd</span></a>
+  <a href="./03-tips-tricks.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tips and tricks</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-files.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">04-files</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  <a href="./conclusion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Conclusion</span></a>
   </div>
 </li>
     </ul>
@@ -195,8 +191,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#how-to-access-the-shell" id="toc-how-to-access-the-shell" class="nav-link active" data-scroll-target="#how-to-access-the-shell"><span class="toc-section-number">1.1</span>  How to access the shell</a></li>
-  <li><a href="#starting-with-the-shell" id="toc-starting-with-the-shell" class="nav-link" data-scroll-target="#starting-with-the-shell"><span class="toc-section-number">1.2</span>  <strong>Starting with the shell</strong></a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">2</span>  Introduction</a>
+  <ul class="collapse">
+  <li><a href="#how-to-access-the-shell" id="toc-how-to-access-the-shell" class="nav-link" data-scroll-target="#how-to-access-the-shell"><span class="toc-section-number">2.1</span>  How to access the shell</a></li>
+  <li><a href="#starting-with-the-shell" id="toc-starting-with-the-shell" class="nav-link" data-scroll-target="#starting-with-the-shell"><span class="toc-section-number">2.2</span>  Starting with the shell</a>
+  <ul class="collapse">
+  <li><a href="#making-a-new-directory" id="toc-making-a-new-directory" class="nav-link" data-scroll-target="#making-a-new-directory"><span class="toc-section-number">2.2.1</span>  Making a new directory</a></li>
+  <li><a href="#listing-and-navigating" id="toc-listing-and-navigating" class="nav-link" data-scroll-target="#listing-and-navigating"><span class="toc-section-number">2.2.2</span>  Listing and navigating</a></li>
+  </ul></li>
+  <li><a href="#arguments" id="toc-arguments" class="nav-link" data-scroll-target="#arguments"><span class="toc-section-number">2.3</span>  <strong>Arguments</strong></a></li>
+  <li><a href="#manuals" id="toc-manuals" class="nav-link" data-scroll-target="#manuals"><span class="toc-section-number">2.4</span>  Manuals</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -205,13 +210,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to the shell command line</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Clara Jégousse </p>
+          </div>
+  </div>
     
   
     
@@ -220,6 +231,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<section id="introduction" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Introduction</h1>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -236,13 +249,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<section id="how-to-access-the-shell" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="how-to-access-the-shell"><span class="header-section-number">1.1</span> How to access the shell</h2>
+<section id="how-to-access-the-shell" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="how-to-access-the-shell"><span class="header-section-number">2.1</span> How to access the shell</h2>
 <p>You access the shell using the “terminal”. The terminal is a window into which we will type commands in. The terminal is already available on Mac and Linux. For windows you must download a separate program.</p>
 </section>
-<section id="starting-with-the-shell" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="starting-with-the-shell"><span class="header-section-number">1.2</span> <strong>Starting with the shell</strong></h2>
+<section id="starting-with-the-shell" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="starting-with-the-shell"><span class="header-section-number">2.2</span> Starting with the shell</h2>
 <p>We will spend most of our time learning about the basics of the shell by manipulating some experimental data from a hearing test.</p>
+<section id="making-a-new-directory" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="making-a-new-directory"><span class="header-section-number">2.2.1</span> Making a new directory</h3>
 <p>First, we’re going to create a new <strong>directory</strong> to work in using the command <code>mkdir</code> which stands for “<strong>m</strong>a<strong>k</strong>e <strong>dir</strong>ectory”.</p>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -259,6 +274,9 @@ Note
 </div>
 <p>To create the directory, we must type the following command in the terminal and hit return to execute the command.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir training</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="listing-and-navigating" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="listing-and-navigating"><span class="header-section-number">2.2.2</span> Listing and navigating</h3>
 <p>Now let’s see if our new directory was created using the command <code>ls</code> that stands for “list” or “listing”.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should see your new directory called “training” in the list displayed in the terminal.</p>
@@ -269,14 +287,45 @@ Note
 <div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> touch file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We can now check with if the file was created using the <code>ls</code> command again.</p>
 <p>Now we’re going to download the data for this tutorial. For this you’ll need internet access, because you’re going to get it off the web. Enter the command:</p>
-<pre><code>git clone https://github.com/clarajegousse/training-data</code></pre>
-<p>This command will grab all of the data needed for this workshop from the internet. (We’re not going to talk about git right now, but it’s a tool for doing version control.)</p>
-<p>Now let’s check to see that we got the data. Again type: <code>ls</code> Now we should see a list of a lot of files, including something called data.</p>
-<p>In there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: <code>ls -F</code> Anything with a “/” after it is a directory. Things with a “*” after them are programs. If there’s after the name, then it’s a file.</p>
-<p>You can also use the command <code>ls -l</code> to see whether items in a directory are files or directories. <code>ls -l</code> gives a lot more information too, such as the size of the file</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> git clone https://github.com/clarajegousse/training-data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command will grab all of the data needed for this workshop from the internet.</p>
+<p>Now let’s check to see that we got the data.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: <code>ls -F</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Anything with a <code>/</code> after it is a directory. Things with a <code>*</code> after them are programs. If there’s after the name, then it’s a file.</p>
+<p>You can also use the command <code>ls -l</code> to see whether items in a directory are files or directories. <code>ls -l</code> gives a lot more information too, such as the size of the file.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>So, we can see that we have several files, directories and a program. Great!</p>
+</section>
+</section>
+<section id="arguments" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="arguments"><span class="header-section-number">2.3</span> <strong>Arguments</strong></h2>
+<p>Most commands offer additional arguments that control their exact behavior. For example, <code>-F</code> and <code>-l</code> are arguments to <code>ls</code>. The <code>ls</code> program, like many programs, take a lot of arguments. But how do we know what the options are to particular commands? We can consult the manual!</p>
+</section>
+<section id="manuals" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="manuals"><span class="header-section-number">2.4</span> Manuals</h2>
+<p>We can consult the manual using the following:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> man ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To exit the manual, hit the <code>q</code> key to “<strong>q</strong>uit”.</p>
+<p>Every single command has its own manual. Earlier, we used the command <code>cd</code> and we can also consult the manual for <code>cd</code>:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> man cd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Programs that are run from the command line can be complex. To see an example, open up the manual page for the <code>find</code> program. No one can possibly learn all of these arguments, of course. So you will probably find yourself referring back to the manual page frequently.</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -421,7 +470,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./02-structure.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">structure</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">The directory file structure</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
