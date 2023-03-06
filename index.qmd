@@ -1,13 +1,13 @@
 # Preface {.unnumbered}
 
-## Why learn how to use the shell
+This course was inspired and adapted from the Carpentries materials.
 
-There are many reasons to learn about the shell.
+<https://datacarpentry.org/shell-genomics/>
 
--   For most bioinformatics tools, you have to use the shell. There is no graphical interface. If you want to work in metagenomics or genomics you're going to need to use the shell.
+## Why learn how to use the shell?
 
--   The shell gives you *power*. The command line gives you the power to do your work more efficiently and more quickly. When you need to do things tens to hundreds of times, knowing how to use the shell is transformative.
+The shell gives you *power*.
 
--   To use remote computers or cloud computing, you need to use the shell.
+The command line gives you the power to do your work more efficiently and more quickly. When you need to do things tens to hundreds of times, knowing how to use the shell is transformative.
 
--   We're going to use it in this class, for all of the reasons above.
+Knowing how to use the shell will enable you to use remote computers or cloud computing, you need to use the shell.
