@@ -1,6 +1,6 @@
 # Short introduction to the Shell command line
 
-<https://teammaclean.github.io/intro-shell-cmd-line//>
+<https://teammaclean.github.io/intro-shell-cmd-line/>
 
 # TODO
 
