@@ -1,8 +1,6 @@
-# intro-shell-cmd-line
+# Short introduction to the Shell command line
 
-Short introduction to the Shell command line
-
-<https://clarajegousse.github.io/intro-shell-cmd-line/>
+<https://teammaclean.github.io/intro-shell-cmd-line//>
 
 # TODO
 
