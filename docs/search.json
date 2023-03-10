@@ -2,14 +2,14 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "intro-shell-cmd-line",
+    "title": "Introduction to the shell command line",
     "section": "",
     "text": "Preface\nThis course was inspired and adapted from the Carpentries materials.\nhttps://datacarpentry.org/shell-genomics/"
   },
   {
     "objectID": "index.html#why-learn-how-to-use-the-shell",
     "href": "index.html#why-learn-how-to-use-the-shell",
-    "title": "intro-shell-cmd-line",
+    "title": "Introduction to the shell command line",
     "section": "Why learn how to use the shell?",
     "text": "Why learn how to use the shell?\nThe shell gives you power.\nThe command line gives you the power to do your work more efficiently and more quickly. When you need to do things tens to hundreds of times, knowing how to use the shell is transformative.\nKnowing how to use the shell will enable you to use remote computers or cloud computing, you need to use the shell."
   },
@@ -24,29 +24,29 @@
     "objectID": "01-intro.html#how-to-access-the-shell",
     "href": "01-intro.html#how-to-access-the-shell",
     "title": "1  Introduction to the shell command line",
-    "section": "2.1 How to access the shell",
-    "text": "2.1 How to access the shell\nYou access the shell using the “terminal”. The terminal is a window into which we will type commands in. The terminal is already available on Mac and Linux. For windows you must download a separate program."
+    "section": "2.2 How to access the shell",
+    "text": "2.2 How to access the shell\nYou access the shell using the “terminal”. The terminal is a window into which we will type commands in. The terminal is already available on Mac and Linux. For windows you must download a separate program."
   },
   {
     "objectID": "01-intro.html#starting-with-the-shell",
     "href": "01-intro.html#starting-with-the-shell",
     "title": "1  Introduction to the shell command line",
-    "section": "2.2 Starting with the shell",
-    "text": "2.2 Starting with the shell\nWe will spend most of our time learning about the basics of the shell by manipulating some experimental data from a hearing test.\n\n2.2.1 Making a new directory\nFirst, we’re going to create a new directory to work in using the command mkdir which stands for “make directory”.\n\n\n\n\n\n\nNote\n\n\n\nThe word “directory” a location for storing files on a computer and it is synonym to “folder”.\n\n\nTo create the directory, we must type the following command in the terminal and hit return to execute the command.\n$ mkdir training\n\n\n2.2.2 Listing and navigating\nNow let’s see if our new directory was created using the command ls that stands for “list” or “listing”.\n$ ls\nYou should see your new directory called “training” in the list displayed in the terminal.\nNow we’re going to go into that directory using the command cd which stands for “change directory”.\n$ cd training\nNow let’s look at see what’s in here. There should be nothing right now, because we just made it, but let’s check using the command ls again.\nNow we are going to create a text file using the command touch\n$ touch file.txt\nWe can now check with if the file was created using the ls command again.\nNow we’re going to download the data for this tutorial. For this you’ll need internet access, because you’re going to get it off the web. Enter the command:\n$ git clone https://github.com/clarajegousse/training-data\nThis command will grab all of the data needed for this workshop from the internet.\nNow let’s check to see that we got the data.\n$ ls\nIn there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: ls -F\n$ ls -F\nAnything with a / after it is a directory. Things with a * after them are programs. If there’s after the name, then it’s a file.\nYou can also use the command ls -l to see whether items in a directory are files or directories. ls -l gives a lot more information too, such as the size of the file.\n$ ls -l\nSo, we can see that we have several files, directories and a program. Great!"
+    "section": "2.3 Starting with the shell",
+    "text": "2.3 Starting with the shell\nWe will spend most of our time learning about the basics of the shell by manipulating some experimental data from a hearing test.\n\n2.3.1 Making a new directory\nFirst, we’re going to create a new directory to work in using the command mkdir which stands for “make directory”.\n\n\n\n\n\n\nNote\n\n\n\nThe word “directory” a location for storing files on a computer and it is synonym to “folder”.\n\n\nTo create the directory, we must type the following command in the terminal and hit return to execute the command.\nmkdir training\n\n\n2.3.2 Listing and navigating\nNow let’s see if our new directory was created using the command ls that stands for “list” or “listing”.\nls\nYou should see your new directory called “training” in the list displayed in the terminal.\nNow we’re going to go into that directory using the command cd which stands for “change directory”.\ncd training\nNow let’s look at see what’s in here. There should be nothing right now, because we just made it, but let’s check using the command ls again.\nNow we are going to create a text file using the command touch\ntouch file.txt\nWe can now check with if the file was created using the ls command again.\nNow we’re going to download the data for this tutorial. For this you’ll need internet access, because you’re going to get it off the web. Enter the command:\ngit clone https://github.com/clarajegousse/training-data\nThis command will grab all of the data needed for this workshop from the internet.\nNow let’s check to see that we got the data.\nls\nIn there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: ls -F\nls -F\nAnything with a / after it is a directory. Things with a * after them are programs. If there’s after the name, then it’s a file.\nYou can also use the command ls -l to see whether items in a directory are files or directories. ls -l gives a lot more information too, such as the size of the file and file permissions.\nls -l\nSo, we can see that we have several files, directories and a program. Great!"
   },
   {
     "objectID": "01-intro.html#arguments",
     "href": "01-intro.html#arguments",
     "title": "1  Introduction to the shell command line",
-    "section": "2.3 Arguments",
-    "text": "2.3 Arguments\nMost commands offer additional arguments that control their exact behavior. For example, -F and -l are arguments to ls. The ls program, like many programs, take a lot of arguments. But how do we know what the options are to particular commands? We can consult the manual!"
+    "section": "2.4 Arguments",
+    "text": "2.4 Arguments\nMost commands offer additional arguments that control their exact behavior. For example, -F and -l are arguments to ls. The ls program, like many programs, take a lot of arguments. But how do we know what the options are to particular commands? We can consult the manual!"
   },
   {
     "objectID": "01-intro.html#manuals",
     "href": "01-intro.html#manuals",
     "title": "1  Introduction to the shell command line",
-    "section": "2.4 Manuals",
-    "text": "2.4 Manuals\nWe can consult the manual using the following:\n$ man ls\nTo exit the manual, hit the q key to “quit”.\nEvery single command has its own manual. Earlier, we used the command cd and we can also consult the manual for cd:\n$ man cd\n\n\n\n\n\n\nTip\n\n\n\nPrograms that are run from the command line can be complex. To see an example, open up the manual page for the find program. No one can possibly learn all of these arguments, of course. So you will probably find yourself referring back to the manual page frequently."
+    "section": "2.5 Manuals",
+    "text": "2.5 Manuals\nWe can consult the manual using the following:\nman ls\nTo exit the manual, hit the q key to “quit”.\nEvery single command has its own manual. Earlier, we used the command cd and we can also consult the manual for mkdir:\nman mkdir\n\n\n\n\n\n\nTip\n\n\n\nPrograms that are run from the command line can be complex. To see an example, open up the manual page for the find program. No one can possibly learn all of these arguments, of course. So you will probably find yourself referring back to the manual page frequently."
   },
   {
     "objectID": "02-structure.html#moving-around-the-file-system",
@@ -102,7 +102,7 @@
     "href": "03-tips-tricks.html#which-program",
     "title": "3  Tips and tricks",
     "section": "3.4 Which program?",
-    "text": "3.4 Which program?\nCommands like ls, rm, echo, and cd are just ordinary programs on the computer. A program is just a file that you can execute. The program which tells you the location of a particular program. For example:\nwhich ls\nWill return /bin/ls. Thus, we can see that ls is a program that sits inside of the /bin directory. Now enter:\nwhich find\nYou will see that find is a program that sits inside of the /usr/bin directory.\nSo … when we enter a program name, like ls, and hit enter, how does the shell know where to look for that program? How does it know to run /bin/ls when we enter ls. The answer is that when we enter a program name and hit enter, there are a few standard places that the shell automatically looks. If it can’t find the program in any of those places, it will print an error saying “command not found”. Enter the command:\necho $PATH\nThis will print out the value of the PATH environment variable. More on environment variables later. Notice that a list of directories, separated by colon characters, is listed. These are the places the shell looks for programs to run. If your program is not in this list, then an error is printed. The shell ONLY checks in the places listed in the PATH environment variable.\nNavigate to the shell directory and list the contents. You will notice that there is a program (executable file) called hello in this directory. Now, try to run the program by entering:\nhello\nYou should get an error saying that hello cannot be found. That is because the directory ~/[username]/training is not in the PATH. You can run the hello program by entering:\n./hello\nRemember that . is a shortcut for the current working directory. This tells the shell to run the hello program which is located right here. So, you can run any program by entering the path to that program. You can run hello equally well by specifying:\n~/training/hello\nWhen there are no / characters, the shell assumes you want to look in one of the default places for the program."
+    "text": "3.4 Which program?\nCommands like ls, rm, echo, and cd are just ordinary programs on the computer. A program is just a file that you can execute. The program which tells you the location of a particular program. For example:\nwhich ls\nWill return /bin/ls. Thus, we can see that ls is a program that sits inside of the /bin directory. Now enter:\nwhich find\nYou will see that find is a program that sits inside of the /usr/bin directory.\nWhen there are no / characters, the shell assumes you want to look in one of the default places for the program."
   },
   {
     "objectID": "03-tips-tricks.html#inspecting-files",
@@ -152,5 +152,12 @@
     "title": "4  Conclusion",
     "section": "",
     "text": "By the end of this training session, you will be able to use the command line. The purpose of this training is to give you the very basics so that you can feel confident enough to start learning and building your command line skills by yourself.\nWith this knowledge, you are now ready to have access to the HPC.\nOnce your access is granted, you can go over the courses available here:\n\nhttps://github.com/clarajegousse/tsl-shell-genomics\nhttps://clarajegousse.github.io/tsl-wrangling-genomics\n\nWhen on site (or using VPN), you can access this summary:\nhttps://bioinformatics.tsl.ac.uk/cheatsheet/hpc/terminal/linux/centos/2021/02/12/linux-terminal-cheatsheet-for-HPC.html"
+  },
+  {
+    "objectID": "01-intro.html#what-is-the-shell",
+    "href": "01-intro.html#what-is-the-shell",
+    "title": "1  Introduction to the shell command line",
+    "section": "2.1 What is the shell?",
+    "text": "2.1 What is the shell?\nThe shell is a command-line interface (CLI) program that allows users to interact with an operating system’s services, applications, and utilities. The shell is an interface between the user and the kernel, which is the core of the operating system.\n\n\n\n\n\n\nNote\n\n\n\n\n\nThere are several different types of shells available, including the Bourne shell (sh), the Bourne-Again shell (bash), the C shell (csh), and the Korn shell (ksh). Each shell has its own set of features and syntax, but they all share the same basic functionality of providing a command-line interface for users to interact with an operating system."
   }
 ]

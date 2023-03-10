@@ -9,6 +9,13 @@ We already know one shortcut to go quickly to the home directory:
 cd ~
 ```
 
+The single dot `.` is a shortcut for the current working directory.
+
+``` bash
+cd .
+ls .
+```
+
 ## Wild cards
 
 Navigate to the `~/training/training-data/references` directory. This directory contains five references. If we type `ls`, we will see that there are a bunch of files. By default, `ls` lists all of the files in a given directory. The `*` character is a shortcut for "everything". Thus, if you enter `ls *`, you will see all of the contents of a given directory. Now try this command:
@@ -91,32 +98,6 @@ which find
 
 You will see that `find` is a program that sits inside of the `/usr/bin` directory.
 
-So ... when we enter a program name, like `ls`, and hit enter, how does the shell know where to look for that program? How does it know to run `/bin/ls` when we enter `ls`. The answer is that when we enter a program name and hit enter, there are a few standard places that the shell automatically looks. If it can't find the program in any of those places, it will print an error saying "command not found". Enter the command:
-
-``` bash
-echo $PATH
-```
-
-This will print out the value of the `PATH` environment variable. More on environment variables later. Notice that a list of directories, separated by colon characters, is listed. These are the places the shell looks for programs to run. If your program is not in this list, then an error is printed. The shell ONLY checks in the places listed in the `PATH` environment variable.
-
-Navigate to the `shell` directory and list the contents. You will notice that there is a program (executable file) called `hello` in this directory. Now, try to run the program by entering:
-
-``` bash
-hello
-```
-
-You should get an error saying that hello cannot be found. That is because the directory `~/[username]/training` is not in the `PATH`. You can run the `hello` program by entering:
-
-``` bash
-./hello
-```
-
-Remember that `.` is a shortcut for the current working directory. This tells the shell to run the `hello` program which is located right here. So, you can run any program by entering the path to that program. You can run `hello` equally well by specifying:
-
-``` bash
-~/training/hello
-```
-
 When there are no `/` characters, the shell assumes you want to look in one of the default places for the program.
 
 ## Inspecting files
@@ -187,7 +168,7 @@ Now let's grab all the words in the dictionary that contain the pattern "cat"
 grep 'cat' dict.txt
 ```
 
-Now we can use more complicated patterns called 'regular expressions' to catch the lines we are interested in. For example, all the words in the dictionary starting with 'e'.
+Now we can use more complicated patterns called '[regular expressions](https://en.wikipedia.org/wiki/Regular_expression)' to *catch* the lines we are interested in. For example, all the words in the dictionary starting with 'e'.
 
 ``` bash
 grep '^e' dict.txt
@@ -315,13 +296,13 @@ head dict.txt
 
 Indeed, the word effector is now at the beginning of the dictionary. Great, but a dictionary should be sorted by alphabetical order. Let's reorder the words in the dictionary using the command `sort`
 
-``` bash 
+``` bash
 sort dict.txt > sorted-dict.txt
 ```
 
 We verify that the change was made:
 
-``` bash 
+``` bash
 head sorted-dict.txt
 grep 'effector' sorted-dict.txt
 grep '^effect' sorted-dict.txt
@@ -332,8 +313,3 @@ We can now rename (and replace) the dictionary:
 ``` bash
 mv sorted-dict.txt dict.txt
 ```
-
-
-
-
-

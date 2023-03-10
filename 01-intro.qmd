@@ -8,8 +8,17 @@ author: "Clara Jégousse"
 ::: {.callout-tip icon="false"}
 ## 🤔 Questions
 
+-   What **is** the shell?
 -   How do you **access** the shell?
 -   How do you **use** the shell?
+:::
+
+## What is the shell?
+
+The shell is a command-line interface (CLI) program that allows users to interact with an operating system's services, applications, and utilities. The shell is an interface between the user and the kernel, which is the core of the operating system.
+
+::: {.callout-note collapse="true"}
+There are several different types of shells available, including the Bourne shell (sh), the Bourne-Again shell (**bash**), the C shell (csh), and the Korn shell (ksh). Each shell has its own set of features and syntax, but they all share the same basic functionality of providing a command-line interface for users to interact with an operating system.
 :::
 
 ## How to access the shell
@@ -31,7 +40,7 @@ The word "directory" a location for storing files on a computer and it is synony
 To create the directory, we must type the following command in the terminal and hit return to execute the command.
 
 ``` bash
-$ mkdir training
+mkdir training
 ```
 
 ### Listing and navigating
@@ -39,7 +48,7 @@ $ mkdir training
 Now let's see if our new directory was created using the command `ls` that stands for "list" or "listing".
 
 ``` bash
-$ ls
+ls
 ```
 
 You should see your new directory called "training" in the list displayed in the terminal.
@@ -47,7 +56,7 @@ You should see your new directory called "training" in the list displayed in the
 Now we're going to go into that directory using the command `cd` which stands for "**c**hange **d**irectory".
 
 ``` bash
-$ cd training
+cd training
 ```
 
 Now let's look at see what's in here. There should be nothing right now, because we just made it, but let's check using the command `ls` again.
@@ -55,7 +64,7 @@ Now let's look at see what's in here. There should be nothing right now, because
 Now we are going to create a text file using the command `touch`
 
 ``` bash
-$ touch file.txt
+touch file.txt
 ```
 
 We can now check with if the file was created using the `ls` command again.
@@ -63,7 +72,7 @@ We can now check with if the file was created using the `ls` command again.
 Now we're going to download the data for this tutorial. For this you'll need internet access, because you're going to get it off the web. Enter the command:
 
 ``` bash
-$ git clone https://github.com/clarajegousse/training-data
+git clone https://github.com/clarajegousse/training-data
 ```
 
 This command will grab all of the data needed for this workshop from the internet.
@@ -71,26 +80,26 @@ This command will grab all of the data needed for this workshop from the interne
 Now let's check to see that we got the data.
 
 ``` bash
-$ ls
+ls
 ```
 
 In there, all mixed up together are files and directories/folders. If we want to know which is which, we can type: `ls -F`
 
 ``` bash
-$ ls -F
+ls -F
 ```
 
 Anything with a `/` after it is a directory. Things with a `*` after them are programs. If there's after the name, then it's a file.
 
-You can also use the command `ls -l` to see whether items in a directory are files or directories. `ls -l` gives a lot more information too, such as the size of the file.
+You can also use the command `ls -l` to see whether items in a directory are files or directories. `ls -l` gives a lot more information too, such as the size of the file and [file permissions](https://en.wikipedia.org/wiki/File-system_permissions).
 
 ``` bash
-$ ls -l
+ls -l
 ```
 
 So, we can see that we have several files, directories and a program. Great!
 
-## **Arguments**
+## Arguments
 
 Most commands offer additional arguments that control their exact behavior. For example, `-F` and `-l` are arguments to `ls`. The `ls` program, like many programs, take a lot of arguments. But how do we know what the options are to particular commands? We can consult the manual!
 
@@ -99,15 +108,15 @@ Most commands offer additional arguments that control their exact behavior. For 
 We can consult the manual using the following:
 
 ``` bash
-$ man ls
+man ls
 ```
 
 To exit the manual, hit the `q` key to "**q**uit".
 
-Every single command has its own manual. Earlier, we used the command `cd` and we can also consult the manual for `cd`:
+Every single command has its own manual. Earlier, we used the command `cd` and we can also consult the manual for `mkdir`:
 
 ``` bash
-$ man cd
+man mkdir
 ```
 
 ::: callout-tip

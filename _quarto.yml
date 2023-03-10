@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "intro-shell-cmd-line"
+  title: "Introduction to the shell command line"
   author: "Clara Jégousse"
   date: "3/1/2023"
   chapters:
